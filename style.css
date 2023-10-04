@@ -1,0 +1,328 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background: #41295a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2f0743,
+    #41295a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2f0743,
+    #41295a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+i {
+  pointer-events: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sounds {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.kick-track,
+.snare-track,
+.hihat-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.kick,
+.snare,
+.hihat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.properties {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  justify-content: center;
+}
+
+.properties h1 {
+  width: 10rem;
+  font-size: 3rem;
+  text-shadow: 1px 1px 50px;
+}
+
+.mute {
+  margin: 0 1rem;
+  padding: 1rem;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.select {
+  font-size: 0.8rem;
+  width: 9rem;
+  padding: 1rem;
+}
+
+select {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.play-btn {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border: none;
+  margin: 1.5rem 1rem 1rem 1rem;
+  background-color: #41295a;
+  color: white;
+  border: 1px white solid;
+  box-shadow: 1px 1px 10px;
+  text-shadow: 1px 1px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background-color: white;
+  color: #41295a;
+  box-shadow: 1px 1px 10px white;
+  text-shadow: 1px 1px 20px #41295a;
+}
+
+.tempo-slider {
+  position: absolute;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.tempo {
+  position: relative;
+  width: 20rem;
+  height: 1rem;
+  background-color: #833ab4;
+  margin: 1rem;
+  border-radius: 2rem;
+}
+
+.tempo p {
+  text-align: center;
+}
+
+.tempo-nr {
+  font-size: 2rem;
+}
+
+.kick-pad {
+  background-color: #7c31a4;
+  box-shadow: 1px 1px 8px #7c31a4;
+}
+.snare-pad {
+  background-color: #4c4697;
+  box-shadow: 1px 1px 8px #4c4697;
+}
+.hihat-pad {
+  background-color: #812967;
+  box-shadow: 1px 1px 8px #812967;
+}
+
+.snare-select {
+  background-color: #6f67df;
+  color: white;
+}
+
+.kick-select {
+  background-color: #ae48e5;
+  color: white;
+}
+
+.hihat-select {
+  background-color: #b43a8f;
+  color: white;
+}
+
+.kick-pad.active {
+  background-color: #c456ff;
+}
+.snare-pad.active {
+  background-color: #8277ff;
+}
+.hihat-pad.active {
+  background-color: #f74ec4;
+}
+
+.mute.active {
+  background-color: rgb(147, 147, 147);
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2f0743;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Abril Fatface", sans-serif;
+  text-decoration: underline;
+  font-size: 2rem;
+}
+
+@media (max-width: 1300px) {
+  .mute {
+    padding: 0.5rem;
+  }
+  .select {
+    padding: 0.5rem 0;
+  }
+  .properties h1 {
+    font-size: 2rem;
+  }
+  .pad {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  .play-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    margin: 1rem;
+  }
+  .tempo {
+    margin: 0.3rem;
+  }
+}
+
+/* Add this CSS inside a media query for mobile screens */
+@media (max-width: 800px) {
+  body {
+    font-size: 16px; /* Adjust the font size for better readability on smaller screens */
+    overflow-x: hidden;
+  }
+
+  .sounds {
+    width: 100%; /* Make the sounds container take up the full width */
+    padding: 5px; /* Add some padding for better spacing on small screens */
+  }
+
+  .pad {
+    width: 3rem;
+    height: 3rem; /* Reduce the size of pads for better mobile layout */
+  }
+
+  .kick-track,
+  .snare-track,
+  .hihat-track {
+    flex-direction: column; /* Stack tracks vertically on small screens */
+    margin-top: 1rem; /* Add some margin between tracks */
+  }
+
+  .properties h1 {
+    font-size: 2rem; /* Reduce the title font size */
+  }
+
+  .tempo {
+    width: 100%; /* Make the tempo slider take up full width */
+  }
+
+  .tempo p {
+    text-align: center;
+  }
+
+  .tempo-nr {
+    font-size: 1.5rem; /* Reduce the tempo number font size */
+  }
+
+  .intro {
+    font-size: 1.5rem; /* Reduce the intro font size */
+  }
+}
+
+@media (max-width: 600px) {
+  .properties {
+    transform: scale(0.9);
+  }
+  .kick-track,
+  .snare-track,
+  .hihat-track {
+    transform: scale(0.8);
+  }
+  footer {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 450px) {
+  .kick-track,
+  .snare-track,
+  .hihat-track {
+    transform: scale(0.6);
+  }
+}
